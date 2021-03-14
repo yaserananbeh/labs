@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Number Calculator</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            /* background-color: red; */
+        }
+        html{
+            background-color: lavender;
+        }
+        body{
+            width: 70%;
+            margin:0 auto;
+            text-align: center;
+            background-color: rgb(57, 59, 80) ;
+            /* color: rgb(172, 181, 223); */
+            height: 100vh;
+            
+        }
+        header{
+            /* height: 20%; */
+            background-color: rgb(48, 59, 212);
+        }
+        header h1{
+            padding: 30px;
+            font-size: 70px;
+            color: rgb(0, 219, 219);
+        }
+        main{
+            margin: 30px 0 30px 0;
+            font-size: 20px;
+        }
+        main h1{
+            margin-bottom: 30px;
+        }
+        main h3{
+            font-weight: lighter;
+        }
+        span{
+            color: red;
+            font-size: 25px;
+            display: block;
+
+        }
+        #output{
+            margin-top :50px; 
+            font-size: 30px;
+            font-weight: bolder;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(243, 22, 22);
+        }
+        footer{
+            background-color: royalblue;
+            position: fixed;
+            width: 70%;
+            height: 30px;
+            text-align: center;
+            font-size: larger;
+            color: rgb(0, 219, 219);
+            bottom: 0;
+            
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Calculator application</h1>
+    </header>
+    <main>
+        <h1 id="name"></h1>
+        <div>
+             <h3>
+                The questions that we asked you before are :
+                
+            </h3> 
+                <p style="color: black; background-color: white ;">Please Enter your name Your input was : <span id="name1"></span></p>
+                <p style="color: palevioletred ; background-color: blueviolet ;">Please Enter the first number Your input was : <span id="fnum"></span></p>
+                <p style="color: orange ; background-color: rosybrown;">Please Enter the second number Your input was : <span id="snum"></span></p>
+                <p style="color: rgb(1, 59, 1); background-color: gray ;">Choose one of these mathematical operators (+) or (-) or (*) or (/)  Your input was : <span id="EnteredOp"></span></p>
+            
+        </div>
+        <div id="output"></div>
+        
+    </main>
+    <footer>
+        &copy; copyright 
+    </footer>
+    
+    <script>
+
+        let name= document.getElementById("name");
+        let output= document.getElementById("output");
+        let name1= document.getElementById("name1");
+        let fnum= document.getElementById("fnum");
+        let snum= document.getElementById("snum");
+        let EnteredOp= document.getElementById("EnteredOp");
+
+        alert("Welcome This website will provide you a way to find the result of calculate two numbers")
+        let enteredName = prompt("Please Enter your name ");
+        console.log("The User name is : "+enteredName);
+        name1.innerHTML="'"+enteredName+"'";
+        alert("Welcome again Ms/Mr " + enteredName);
+        let num1=prompt("Please Enter the first number");
+        alert("We accept the first number"+" The first number is : "+num1+" let's go to the next step ");
+        fnum.innerHTML="'"+num1+"'";
+        let num2=prompt("Please Enter the second number");
+        alert("Alright you're doing great we cought the second number It's : "+num2);
+        snum.innerHTML="'"+num2+"'";
+        
+        let operator=prompt("Choose one of these mathematical operators (+) or (-) or (*) or (/) ");
+        while(operator != "+" && operator != "-" && operator != "*" && operator != "/"){
+            let operator=prompt("Choose one of these mathematical operators (+) or (-) or (*) or (/) ");
+        }
+
+        EnteredOp.innerHTML="'"+operator+"'";
+
+        let Convertednum1 = parseInt(num1);
+        let Convertednum2 = parseInt(num2);
+        let result= '';
+        if(operator=="+"){
+            result=Convertednum1 + Convertednum2;
+            output.innerHTML="The sum of "+Convertednum1+" + "+Convertednum2+" is equal : " + result;
+            console.log("Depends on user inputs The sum of "+Convertednum1+" + "+Convertednum2+" is equal : " + result);
+        }
+        else if(operator=="-"){
+            result=Convertednum1 - Convertednum2;
+            // document.write("The subtraction of "+Convertednum1+" - "+Convertednum2+" is equal : " + result);
+            output.innerHTML= "The subtraction of "+Convertednum1+" - "+Convertednum2+" is equal : " + result;
+            console.log ("Depends on user inputs The subtraction of "+Convertednum1+" - "+Convertednum2+" is equal : " + result);
+        }
+        else if(operator=="*"){
+            result=Convertednum1 * Convertednum2;
+            // document.write("The multiplication of "+Convertednum1+" * "+Convertednum2+" is equal : " + result);
+            output.innerHTML="The multiplication of "+Convertednum1+" * "+Convertednum2+" is equal : " + result;
+            console.log("Depends on user inputs The multiplication of "+Convertednum1+" * "+Convertednum2+" is equal : " + result);
+        }
+        else{
+            result=Convertednum1 / Convertednum2;
+            // document.write("The division of "+Convertednum1+" / "+Convertednum2+" is equal : " + result);
+            output.innerHTML="The division of "+Convertednum1+" / "+Convertednum2+" is equal : " + result;
+            console.log( "Depends on user inputs The division of "+Convertednum1+" / "+Convertednum2+" is equal : " + result   );
+        }
+
+        name.innerHTML=("Welcome Ms/Mr "+enteredName);
+        
+
+    </script>
+</body>
+</html>
