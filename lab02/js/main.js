@@ -88,11 +88,55 @@ else{
   alert('Really, You Killed me (WRONG) ' );
 }
 
+/** Start The sixth question  */
+for(let i=4;i>0;i--){
+  let prompt0=prompt('Q6) Enter a number from 1-20  ('+i+' attempts left)');
+  if(prompt0==='15'){
+    alert('Horraaay! Correct answer');
+    score++;
+    break;
+  }
+  else if(prompt0<15){
+    alert('too law');
+  }
+  else{
+    alert('too high');
+  }
+}
+alert('the correct answer is 15');
+
+
+
+
+
+/** End The sixth question  */
+
+/** Start The 7th question  */
+let arr=['BLUE','BLACK','RED'];
+for(let i=6;i>0;i--){
+  let prompt0 = prompt('Q7) Try to guess on of my favorate colors  ('+i+' attempts left)').toUpperCase();
+  if(prompt0 === arr[0] || prompt0 === arr[1] || prompt0 ===arr[2]){
+    alert('Horraaay! Correct answer *-*');
+    score++;
+    break;
+  }
+
+  else{
+    alert('HEHEHE you are Wrong :\')');
+  }
+}
+alert('the correct answers is '+arr[0]+' or '+arr[1]+' or '+arr[2]);
+
+
+
+
+
+/** End The 7Th question  */
 /*End the code that responsible about asking the user */
 
 alert('your score is : '+ score);
 theEndScore.innerHTML= score;
-thePercentage.innerHTML=score*20+'%';
+thePercentage.innerHTML=score*15-5+'%';
 
 
 
